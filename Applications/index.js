@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 
 const Auth = require('./Authentication/auth.router')
 const User = require('./User/user.router')
+const Award = require('./Award/award.router')
 
 /** Cors */
 app.use(cors());
@@ -20,5 +21,6 @@ app.use("/test", (req, res, next) => {
 
 app.use("/api/auth", Auth)
 app.use("/api/user", User)
+app.use("/api/award", Award)
 
 module.exports = app;
