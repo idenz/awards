@@ -71,7 +71,7 @@ module.exports = {
     try {
         
         let filter = { isDelete: false, _id: req.params.id }
-        let result = await Model.findOneAndUpdate(filter, body, { new: true, runValidators: true })
+        let result = await Model.findOneAndUpdate(filter, req.body, { new: true, runValidators: true })
 
         if(!result){
             return ErrorBuilder({ statusCode: 400, isOperational: true, message: "Can't update data"}, req, res)
