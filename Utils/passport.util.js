@@ -1,10 +1,10 @@
 
-const ppjwt = require("passport-jwts");
+const ppjwt = require("passport-jwt");
 const config = require("../Config/app.config")
 
 const UserModel = require('../Database/mongodb.database').User
 const Strategy = ppjwt.Strategy;
-const ExtractJWT = ppjwt.ExtractJWT;
+const ExtractJWT = ppjwt.ExtractJwt;
 
 const options = {
     jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
