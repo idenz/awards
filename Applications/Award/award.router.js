@@ -4,9 +4,10 @@ const passport = require("passport");
 const router = express.Router();
 const controller = require('./award.controller')
 const validation = require('./award.validation')
+const filter = require('./award.filter')
 
 router
-    .get("/", [passport.authenticate("jwt", {session: false})], controller.getAll)
+    .get("/", [passport.authenticate("jwt", {session: false})], filter.filter, controller.getAll)
     .post("/", [passport.authenticate("jwt", {session: false})], validation.create, controller.create)
 
 router

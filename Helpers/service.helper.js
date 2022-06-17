@@ -27,7 +27,9 @@ module.exports = {
         let limit = parseInt(req.query.limit) || 10;
         const skip = (page - 1)*limit;
 
-        let filter = {}
+        let filter = req.query.filter
+        filter.isDelete = false
+
         let sort   = { $natural: -1 }
         if(req.query.sort) sort[req.query.sort] = -1
 
